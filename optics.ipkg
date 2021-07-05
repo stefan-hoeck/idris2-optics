@@ -1,0 +1,9 @@
+package optics
+version = 0.0.1
+authors = "Stefan Höck"
+license = "BSD-3"
+
+depends = base >= 0.4.0
+
+modules = Optics
+sourcedir = "src"
