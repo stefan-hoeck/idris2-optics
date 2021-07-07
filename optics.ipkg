@@ -4,6 +4,11 @@ authors = "Stefan Höck"
 license = "BSD-3"
 
 depends = base >= 0.4.0
+        , contrib >= 0.4.0
 
-modules = Optics
+modules = Data.Profunctor
+        , Data.Profunctor.Choice
+        , Data.Profunctor.Strong
+
+        , Optics
 sourcedir = "src"
