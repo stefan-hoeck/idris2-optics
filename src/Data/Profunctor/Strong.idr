@@ -74,10 +74,10 @@ Strong Morphism where
 
 public export
 Functor m => Strong (Kleislimorphism m) where
-  first  (Kleisli f) = Kleisli \(a,c) => (,c) <$> f a
-  second (Kleisli f) = Kleisli \(c,a) => (c,) <$> f a
+  first  (Kleisli f) = Kleisli $ \(a,c) => (,c) <$> f a
+  second (Kleisli f) = Kleisli $ \(c,a) => (c,) <$> f a
 
 public export
 Strong (Forget r) where
-  first  (MkForget f) = MkForget \(a,_) => f a
-  second (MkForget f) = MkForget \(_,a) => f a
+  first  (MkForget f) = MkForget $ \(a,_) => f a
+  second (MkForget f) = MkForget $ \(_,a) => f a

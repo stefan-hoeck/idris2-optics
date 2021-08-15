@@ -25,10 +25,10 @@ lens f g = dimap f' (uncurry g) . second
         f' s = (s, f s)
 
 fst : Strong p => Optic p a b (a,c) (b,c)
-fst = lens fst \(_,c),b => (b,c)
+fst = lens fst $ \(_,c),b => (b,c)
 
 snd : Strong p => Optic p a b (c,a) (c,b)
-snd = lens snd \(c,_),b => (c,b)
+snd = lens snd $ \(c,_),b => (c,b)
 
 view : AGetter a b s t -> s -> a
 view f = runConst . applyKleisli (f $ Kleisli MkConst)
